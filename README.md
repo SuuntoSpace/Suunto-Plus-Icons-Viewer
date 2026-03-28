@@ -14,7 +14,6 @@ When programming custom views (`t.html`), finding the correct icon for a shoe, h
 1. **Built-in Catalog**: View dozens of icons instantly without dealing with offline Unicode tables.
 2. **"Copy & Paste" Ready**: The exact HTML entity required for your project is printed right beneath each icon.
 3. **Optimized Rendering**: Uses native JS `evaluate` and HTML `$.subscribe` intervals to dynamically update the UI without triggering the Suunto minifier restrictions.
-4. **Responsive Circular Layout**: The 2x3 grid is asymmetrically anchored to scale flawlessly across different watch models, from the small Suunto 5 to the massive Suunto Race, preventing edges from being cut off.
 
 ### Usage Instructions
 1. **Requirements**: Have Visual Studio Code and the **official SuuntoPlus plugin** installed.
@@ -35,7 +34,6 @@ Al programar vistas personalizadas (`t.html`), buscar el icono correcto de una z
 1. **Catálogo Integrado**: Visualiza decenas de iconos sin tener que pelearte con mapas de caracteres vacíos de Suunto offline.
 2. **"Copy & Paste" Directo**: Debajo de cada dibujo verás el texto HTML exacto (ej. `&#xF106;`) que debes teclear en tu código.
 3. **Renderizado Optimizado**: Su mecánica usa un ticker del `evaluate` JS y la antena `$.subscribe` para saltarse los dolores de cabeza de los bucles nativos y el empaquetador XML.
-4. **Layout Circular Responsivo**: La cuadrícula 2x3 está anclada asimétricamente. Funciona y se centra perfectamente escalada para no colapsar contra los bordes curvos, desde un pequeño Suunto 5 Peak al masivo Suunto Race.
 
 ### Instrucciones de Uso
 1. **Requisitos**: Ten instalado Visual Studio Code y el **plugin oficial de SuuntoPlus**.
