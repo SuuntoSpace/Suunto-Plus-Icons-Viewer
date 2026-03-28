@@ -1,0 +1,21 @@
+{
+  "name": "Icon Viewer",
+  "version": "1.0",
+  "author": "Antigravity",
+  "description": "Dynamic Icon Viewer",
+  "type": "feature",
+  "usage": "workout",
+  "modificationTime": 1711612000,
+  "in": [],
+  "out": [
+    {
+      "name": "curBase",
+      "format": "Count_Threedigits"
+    }
+  ],
+  "template": [
+    {
+      "name": "t.html"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+<uiView
+  onLoad="
+    var subVal;
+  "
+  onActivate="
+    subVal = $.subscribe('Zapp/{zapp_index}/Output/curBase', function(v) {
+      if (v != null) {
+        var base = Math.floor(v);
+        var i = 0;
+        while (i != 6) {
+          var num = base + i;
+          if (num > 450) { num = 100; }
+          
+          /* Formato Decimal puro 'F100', 'F101' */
+          var lab = 'F' + num.toString(10);
+          
+          /* Para renderizar el icono como Hexadecimal: &#xF100; */
+          var ent = String.fromCharCode(38, 35) + 'x' + lab + String.fromCharCode(59);
+          setText('#ico-' + i, ent);
+          
+          /* Para imprimir en pantalla literalmente el texto: &#xF100; */
+          var txtRaw = String.fromCharCode(38) + 'amp;#x' + lab + String.fromCharCode(59);
+          setText('#txt-' + i, txtRaw);
+          
+          i = i + 1;
+        }
+        
+        var endnum = base + 5;
+        if (endnum > 450) { endnum = 450; }
+        setText('#title-range', 'F' + base.toString(10) + ' al F' + endnum.toString(10));
+      }
+    });
+  "
+  onDeactivate="
+    if (subVal != null) {
+      $.unsubscribe(subVal);
+    }
+  "
+>
+  <div id="suuntoplus">
+    <!-- FONDO -->
+    <div style="position:absolute; top:0; left:0; width:100%; height:100%; background-color:#000000; z-index:-1;"></div>
+
+    <div class="sp-t-s p-hc" style="top:1%; color:#00FFCC; z-index:10; font-weight:bold;">Icons</div>
+    <div id="title-range" class="sp-t-s p-hc" style="top:13%; color:#AAAAAA; z-index:10;">Rendering...</div>
+
+    <!-- ROW 1 -->
+    <div style="position:absolute; top:28%; left:calc(32% - 50%e); width:40%; text-align:center;">
+       <span id="ico-0" class="f-ico" style="font-size:36px; color:#FFFFFF;"></span><br>
+       <span id="txt-0" class="sp-b-s" style="color:#AAAAAA; font-size:12px;"></span>
+    </div>
+    <div style="position:absolute; top:28%; left:calc(68% - 50%e); width:40%; text-align:center;">
+       <span id="ico-1" class="f-ico" style="font-size:36px; color:#FFFFFF;"></span><br>
+       <span id="txt-1" class="sp-b-s" style="color:#AAAAAA; font-size:12px;"></span>
+    </div>
+
+    <!-- ROW 2 -->
+    <div style="position:absolute; top:52%; left:calc(26% - 50%e); width:45%; text-align:center;">
+       <span id="ico-2" class="f-ico" style="font-size:36px; color:#FFFFFF;"></span><br>
+       <span id="txt-2" class="sp-b-s" style="color:#AAAAAA; font-size:12px;"></span>
+    </div>
+    <div style="position:absolute; top:52%; left:calc(74% - 50%e); width:45%; text-align:center;">
+       <span id="ico-3" class="f-ico" style="font-size:36px; color:#FFFFFF;"></span><br>
+       <span id="txt-3" class="sp-b-s" style="color:#AAAAAA; font-size:12px;"></span>
+    </div>
+
+    <!-- ROW 3 -->
+    <div style="position:absolute; top:76%; left:calc(32% - 50%e); width:40%; text-align:center;">
+       <span id="ico-4" class="f-ico" style="font-size:36px; color:#FFFFFF;"></span><br>
+       <span id="txt-4" class="sp-b-s" style="color:#AAAAAA; font-size:12px;"></span>
+    </div>
+    <div style="position:absolute; top:76%; left:calc(68% - 50%e); width:40%; text-align:center;">
+       <span id="ico-5" class="f-ico" style="font-size:36px; color:#FFFFFF;"></span><br>
+       <span id="txt-5" class="sp-b-s" style="color:#AAAAAA; font-size:12px;"></span>
+    </div>
+
+  </div>
+</uiView>
